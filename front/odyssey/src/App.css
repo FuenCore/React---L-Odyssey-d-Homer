@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.App {
+  padding-top: 24vh;
+}
+
+.container {
+margin-left: 16vw;
+}
+
