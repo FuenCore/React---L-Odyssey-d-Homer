@@ -1,8 +1,8 @@
 const mysql = require("mysql");
 const connection = mysql.createConnection({
   host: "localhost",
-  user: "fuencore",
-  password: "167635",
+  user: "root",
+  password: "password",
   database: "react_odyssey"
 });
 module.exports = connection;
