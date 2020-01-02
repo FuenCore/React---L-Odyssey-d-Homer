@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {BrowserRouter as Router, Link, NavLink } from "react-router-dom";
-import './SignUp.css';
+import { Link } from "react-router-dom";
+import './SignIn.css';
 import { TextField, Snackbar, IconButton, makeStyles, Button } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
@@ -32,6 +32,8 @@ const SignUp = (props) => {
 
   const handleClick = () => {
     setOpen(true);
+
+
   };
 
   const handleClose = (event, reason) => {
@@ -44,7 +46,7 @@ const SignUp = (props) => {
 
   const submitInput = (e) => {
     e.preventDefault();
-    fetch("/auth/signup", {
+    fetch("/auth/signin", {
       method: "POST",
       headers: {
         "Accept": "application/json",
@@ -59,17 +61,13 @@ const SignUp = (props) => {
       );
   };
     return(
-    
 <div>
-    <h1>Sign Up !</h1>
+    <h1>Log In please !</h1>
     <form onSubmit={submitInput}>
-    <TextField id="input" type="text" name="firstname" placeholder="firstname" onChange={updateInput} variant="outlined" /> 
-    <TextField id="input" type="text" name="lastname" placeholder="lastname" onChange={updateInput} variant="outlined" /> 
     <TextField id="input" type="email" name="email" placeholder="email" onChange={updateInput} variant="outlined"/>
     <TextField id="input" type="password" name="password" placeholder="password" onChange={updateInput} variant="outlined"/> 
-    <TextField id="input" type="password" name="passwordconf" placeholder="confirm password" onChange={updateInput} variant="outlined"/>     
-    <Link to="/"><Button id="button" variant="contained" color="primary" onClick={handleClick} style={{width: "100px", height: '50px'}}>SUBMIT</Button></Link>
-    <Link to="/signin">SignIn</Link>
+    <Button id="button" variant="contained" color="primary" onClick={handleClick} style={{width: "100px", height: '50px'}}><Link to="/profile">SUBMIT</Link></Button>
+    <Link to="/signup">SIGN UP</Link>
     <Snackbar anchorOrigin={{
           vertical: 'bottom',
           horizontal: 'center',
@@ -95,7 +93,6 @@ const SignUp = (props) => {
     </form>
 
 </div>
-
     );
 }
 

@@ -1,5 +1,8 @@
 import React from 'react';
-import SignUp from './components/SignUp'
+import SignUp from './components/SignUp';
+import SignIn from './components/SignIn';
+import Profile from './components/Profile'; 
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import './App.css'; 
 import { Grid, Paper, MuiThemeProvider } from '@material-ui/core';
 
@@ -17,7 +20,14 @@ function App() {
             <img id="homer" alt="Homer simpsons eating a donut" src="http://images.innoveduc.fr/react_odyssey_homer/wildhomer.png"  />
             </Grid> 
             <Grid  item xs={12} sm={6} alignContent='center'>
-                <SignUp id="signup" />
+            <Router>
+        <Switch>
+            <Route exact path="/" ><SignUp /></Route>
+            <Route path="/signup" ><SignUp /></Route>
+            <Route path="/signin" ><SignIn /></Route>
+            <Route path="/profile" ><Profile /></Route>
+        </Switch>
+    </Router>
             </Grid>
             </Grid>
             </Paper>

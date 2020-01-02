@@ -1,0 +1,17 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#input {
+    padding: 10px;   
+}
+
+h1 {
+    text-align: left;
+}
+
+#button {
+margin: 20px auto
+}
