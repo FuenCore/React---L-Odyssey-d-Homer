@@ -1,0 +1,24 @@
+{
+    "name": "serveur",
+    "version": "1.0.0",
+    "description": "serveur de la Wild",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "author": "wilder",
+    "dependencies": {
+        "bcrypt": "^3.0.7",
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "jsonwebtoken": "^8.5.1",
+        "lodash": "^4.17.15",
+        "morgan": "^1.9.0",
+        "mysql": "^2.17.1",
+        "nodemon": "^2.0.2",
+        "passport": "^0.4.1",
+        "passport-jwt": "^4.0.0",
+        "passport-local": "^1.0.0",
+        "request": "^2.88.0"
+    }
+}
