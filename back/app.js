@@ -5,6 +5,9 @@ const  bodyParser  =  require('body-parser');
 const  morgan  =  require('morgan');
 const  app  =  express();
 const authRouter = require("./routes/auth/auth");
+const bcrypt = require('bcrypt');
+const passport = require('passport')
+const LocalStrategy = require('passport-local').Strategy;
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended:  false }));
@@ -13,8 +16,12 @@ app.use(express.static(__dirname  +  '/public'));
 
 app.use('/auth', authRouter);
 
+app.get('/profile', passport.authenticate("jwt", { session: false}), (req, res) => {
+    res.send(req.user)
+})
+
 app.get("/", (req,res) => {
-    res.send("youhou");
+    res.status(200).send("youhou");
 });
 
 app.use(function(req, res, next) {
